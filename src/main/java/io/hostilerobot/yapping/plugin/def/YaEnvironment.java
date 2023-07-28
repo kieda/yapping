@@ -1,7 +1,5 @@
 package io.hostilerobot.yapping.plugin.def;
 
-import io.hostilerobot.yapping.ast.ANode;
-
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -9,12 +7,11 @@ import java.util.Map;
 
 public class YaEnvironment {
     // provides logic that will transform given nodes
-    private List<YaLogic> logic = new ArrayList<>();
+    private List<YaLogic> logic;
     // provides lookups for nodes
-    private List<YaLookup> lookups = new ArrayList<>();
-
+    private List<YaLookup> lookups;
     // other environment variables that are defined with respect to the context
-    private Map<YaNamePath, YaData> environmentVars = new LinkedHashMap<>();
+    private Map<YaNamePath, YaData> environmentVars;
 
     private YaEnvironment(List<YaLogic> logic, List<YaLookup> lookups,
                           Map<YaNamePath, YaData> environmentVars) {

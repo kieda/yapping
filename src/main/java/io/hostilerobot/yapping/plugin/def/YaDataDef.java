@@ -2,19 +2,19 @@ package io.hostilerobot.yapping.plugin.def;
 
 import io.hostilerobot.yapping.ast.ANode;
 
-import static io.hostilerobot.yapping.plugin.def.YaData.*;
+import static io.hostilerobot.yapping.plugin.def.YaDataType.*;
 
 public class YaDataDef {
-    private Class<? extends YaData> dataType;
+    private Class<? extends YaDataType> dataType;
     private Class<? extends Object> subType;
-    private YaDataDef(Class<? extends YaData> definitionClass,
+    private YaDataDef(Class<? extends YaDataType> definitionClass,
                       Class<? extends Object> subType) {
         this.dataType = definitionClass;
         this.subType = subType;
     }
 
     private static YaDataDef NONE = new YaDataDef(None.class, Void.class);
-    private static YaDataDef ANY = new YaDataDef(YaData.class, null);
+    private static YaDataDef ANY = new YaDataDef(YaDataType.class, null);
 
     // null can be cast to any type
     // but nothing can be cast to void.
@@ -46,7 +46,7 @@ public class YaDataDef {
         return new YaDataDef(Plugin.class, null);
     }
 
-    public Class<? extends YaData> getDataType() {
+    public Class<? extends YaDataType> getDataType() {
         return dataType;
     }
     public Class<? extends Object> getSubType() {
