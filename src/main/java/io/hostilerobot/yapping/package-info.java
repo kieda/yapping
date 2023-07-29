@@ -91,7 +91,7 @@ package io.hostilerobot.yapping;
  *                              (get: mymesh.triangles, i).x + 1
  *                              i = i + 1)
  *
-*                          glueparts: SPACE LITERAL (my, var, with, spaces);
+ *                          glueparts: SPACE LITERAL (my, var, with, spaces);
  *                          add = fun: (x, y) (add: ...)
  *                          myadd = fun: x y (add: (x, y));
  *
@@ -110,6 +110,24 @@ package io.hostilerobot.yapping;
  *
  *      some environemnts will merge with its parent (like base or math, which merge with the parent)
  *
+ *   asdf[3 3/4]
+ *   list = [a, b, c]
+ *   map  = {a = b, b = c}
+ *   name = "hello"
+ *   regex = /hel+o/
  *
+ *
+ *   (fun:
+ *
+ *
+ *   asdf:
+ *   asdf:
+ *      asdf2:
+ *      :asdf2: ;
+ *   ;
+ *   problem: ambiguity.
+ *       asdf: (asdf: asdf2: asdf2: ;) ;
+ *       asdf: asdf: (asdf2: asdf2: ;) ;
+ *       asdf: asdf: asdf2: (asdf2: ;) ;
  *
  */
