@@ -33,8 +33,8 @@ public class YaPlugin {
     // todo - a plugin is just an ANodeMap.
     //  todo implement maps as an extension of pairs
     //   e.g. {a = 1, b = 2} (notice the comma)
-    private Map<String, YaEnvironment> definedEnvironments;
-    private YaPlugin(Map<String, YaEnvironment> definedEnvironments) {
+    private Map<YaNamePath, YaEnvironment> definedEnvironments;
+    private YaPlugin(Map<YaNamePath, YaEnvironment> definedEnvironments) {
         this.definedEnvironments = definedEnvironments;
     }
 
@@ -55,11 +55,11 @@ public class YaPlugin {
         return new Builder();
     }
     public static final class Builder{
-        private Map<String, YaEnvironment> definedEnvironments;
+        private Map<YaNamePath, YaEnvironment> definedEnvironments;
         private Builder() {
             definedEnvironments = new LinkedHashMap<>();
         }
-        public Builder plugin(String name, YaEnvironment environment) {
+        public Builder plugin(YaNamePath name, YaEnvironment environment) {
             definedEnvironments.put(name, environment);
             return this;
         }
